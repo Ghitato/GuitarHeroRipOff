@@ -10,9 +10,9 @@ public class MainGuitar {
 
     public static void main(String[] args) throws Exception {
         FraGuitar fraGuitar = new FraGuitar();
-        String Pump = "H:\\NetBeansProjects\\Pump.wav";
-        InputStream in = new FileInputStream("Pump.wav");
+        /*String Pump = "H:\\NetBeansProjects\\Pump.wav";
+        InputStream in = new FileInputStream("Song2.wav");
         AudioStream audioStream = new AudioStream(in);
-        AudioPlayer.player.start(audioStream);
+        AudioPlayer.player.start(audioStream);*/
     }
 }
