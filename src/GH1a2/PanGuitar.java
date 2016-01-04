@@ -17,6 +17,7 @@ import sun.audio.AudioStream;
 public class PanGuitar extends JPanel {
 
     JLabel lblOutput;
+    //JLabel lblLine;
     JProgressBar jprgbarHealth;
     PanButton panButton;
     boolean isEasy = false;
@@ -55,25 +56,33 @@ public class PanGuitar extends JPanel {
         public void actionPerformed(ActionEvent event/*, boolean isEasy*/) {
             isEasy = true;
             setBackground(new Color(125, 100, 26));
+
             ImageIcon treb = new ImageIcon("trebleclef.png");
             treb.setImage(treb.getImage().getScaledInstance(100, 400, 0));
             JLabel picture = new JLabel(treb);
             picture.setBounds(100, 370, 100, 400);
             add(picture);
-            /*String Pump = "Song1.wav";
-             InputStream in = null;
-             try {
-             in = new FileInputStream("Song1.wav");
-             } catch (FileNotFoundException ex) {
-             Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
-             }
-             AudioStream audioStream = null;
-             try {
-             audioStream = new AudioStream(in);
-             } catch (IOException ex) {
-             Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
-             }
-             AudioPlayer.player.start(audioStream);*/
+
+            ImageIcon line = new ImageIcon("liney.png");
+            line.setImage(line.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picline = new JLabel(line);
+            picline.setBounds(100, 370, 1500, 400);
+            add(picline);
+
+            String Slow = "Slow.wav";
+            InputStream in = null;
+            try {
+                in = new FileInputStream("Slow.wav");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            AudioStream audioStream = null;
+            try {
+                audioStream = new AudioStream(in);
+            } catch (IOException ex) {
+                Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            AudioPlayer.player.start(audioStream);
         }
     }
 
@@ -82,10 +91,29 @@ public class PanGuitar extends JPanel {
         public void actionPerformed(ActionEvent event/*, boolean isNormal*/) {
             isNormal = true;
             setBackground(Color.GRAY);
-            String Hey = "Song2.wav";
+
+            ImageIcon treb = new ImageIcon("trebleclef.png");
+            treb.setImage(treb.getImage().getScaledInstance(100, 400, 0));
+            JLabel picture = new JLabel(treb);
+            picture.setBounds(100, 370, 100, 400);
+            add(picture);
+
+            ImageIcon line = new ImageIcon("liney.png");
+            line.setImage(line.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picline = new JLabel(line);
+            picline.setBounds(100, 370, 1500, 400);
+            add(picline);
+
+            ImageIcon liney = new ImageIcon("liney.png");
+            liney.setImage(liney.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picliney = new JLabel(liney);
+            picliney.setBounds(100, 370, 1500, 200);
+            add(picliney);
+
+            String Pump = "Pump.wav";
             InputStream in = null;
             try {
-                in = new FileInputStream("Song2.wav");
+                in = new FileInputStream("Pump.wav");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -104,20 +132,45 @@ public class PanGuitar extends JPanel {
         public void actionPerformed(ActionEvent event/*, boolean isHard*/) {
             isHard = true;
             setBackground(Color.RED);
-            /*String Rick = "Song3.wav";
-             InputStream in = null;
-             try {
-             in = new FileInputStream("Song3.wav");
-             } catch (FileNotFoundException ex) {
-             Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
-             }
-             AudioStream audioStream = null;
-             try {
-             audioStream = new AudioStream(in);
-             } catch (IOException ex) {
-             Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
-             }
-             AudioPlayer.player.start(audioStream);*/
+
+            ImageIcon treb = new ImageIcon("trebleclef.png");
+            treb.setImage(treb.getImage().getScaledInstance(100, 400, 0));
+            JLabel picture = new JLabel(treb);
+            picture.setBounds(100, 370, 100, 400);
+            add(picture);
+
+            ImageIcon line = new ImageIcon("liney.png");
+            line.setImage(line.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picline = new JLabel(line);
+            picline.setBounds(100, 370, 1500, 400);
+            add(picline);
+
+            ImageIcon liney = new ImageIcon("liney.png");
+            liney.setImage(liney.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picliney = new JLabel(liney);
+            picliney.setBounds(100, 370, 1500, 200);
+            add(picliney);
+
+            ImageIcon liner = new ImageIcon("liney.png");
+            liner.setImage(liner.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picliner = new JLabel(liner);
+            picliner.setBounds(100, 370, 1500, 600);
+            add(picliner);
+
+            String Fuse = "Fusion.wav";
+            InputStream in = null;
+            try {
+                in = new FileInputStream("Fusion.wav");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            AudioStream audioStream = null;
+            try {
+                audioStream = new AudioStream(in);
+            } catch (IOException ex) {
+                Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            AudioPlayer.player.start(audioStream);
         }
     }
 }
