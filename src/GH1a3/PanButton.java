@@ -8,9 +8,12 @@ import javax.swing.JPanel;
 
 public class PanButton extends JPanel {
 
-    JButton btnUpdateLabel1;
-    JButton btnUpdateLabel2;
-    JButton btnUpdateLabel3;
+    public JButton btnUpdateLabel1;
+    public JButton btnUpdateLabel2;
+    public JButton btnUpdateLabel3;
+  /*public JButton btnA;
+    public JButton btnB;
+    public JButton btnC;*/
 
     PanButton() {
         setLayout(new BorderLayout());
@@ -26,5 +29,17 @@ public class PanButton extends JPanel {
         add(btnUpdateLabel1, BorderLayout.WEST);
         add(btnUpdateLabel2, BorderLayout.CENTER);
         add(btnUpdateLabel3, BorderLayout.EAST);
+        /*btnUpdateLabel1 = new JButton("A");
+        btnUpdateLabel1.setMaximumSize(new Dimension(100, 100));
+        btnUpdateLabel1.setMinimumSize(new Dimension(100, 100));
+        btnUpdateLabel2 = new JButton("B");
+        btnUpdateLabel2.setMaximumSize(new Dimension(100, 100));
+        btnUpdateLabel2.setMinimumSize(new Dimension(100, 100));
+        btnUpdateLabel3 = new JButton("C");
+        btnUpdateLabel3.setMaximumSize(new Dimension(100, 100));
+        btnUpdateLabel3.setMinimumSize(new Dimension(100, 100));
+        add(btnUpdateLabel1, BorderLayout.EAST);
+        add(btnUpdateLabel2, BorderLayout.EAST);
+        add(btnUpdateLabel3, BorderLayout.EAST);*/
     }
 }
