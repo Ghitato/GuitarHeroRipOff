@@ -8,13 +8,15 @@ import java.awt.Graphics2D;
 public class NoteA {
 
     Dimension screenSize;
-    int nHeight = 20, nWidth = 100;
+    int nHeight, nWidth;
     int nWidthR = 35, nLengthR = 300;
     int nX, nY;
 
-    NoteA() {
-        nX = (int) (Math.random() * (nWidth - nLengthR));
-        nY = (nHeight / 5) * 4;
+    NoteA(int x, int y) {
+        nHeight = y / 2;
+        nWidth = x;;
+        //nX = (int) (Math.random() * (nWidth - nLengthR));
+        //nY = (nHeight / 5) * 4;
     }
 
     public void draw(Graphics2D g2D) {
@@ -22,9 +24,9 @@ public class NoteA {
     }
 
     public void update() {
-        nY++;
-        if (nY == nHeight) {
-            nY = 0;
+        nX++;
+        if (nX == nWidth) {
+            nX = 0;
         }
     }
 }

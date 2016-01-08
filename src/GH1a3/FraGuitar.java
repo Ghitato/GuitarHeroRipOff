@@ -11,10 +11,15 @@ public class FraGuitar extends JFrame {
 
     public FraGuitar() {
         PanButton panButton = new PanButton();
-        NoteA noteA = new NoteA();
-        NoteB noteB = new NoteB();
-        NoteC noteC = new NoteC();
+
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        int ySize = ((int) tk.getScreenSize().getHeight());
+        NoteA noteA = new NoteA(xSize, ySize);
+        NoteB noteB = new NoteB(xSize, ySize);
+        NoteC noteC = new NoteC(xSize, ySize);
         PanGuitar panGuitar = new PanGuitar(panButton, noteA, noteB, noteC);
+
         //PanGuitar panGuitar = new PanGuitar(JProgressBar);
         setLayout(new BorderLayout());
         add(panButton, BorderLayout.NORTH);
@@ -22,9 +27,7 @@ public class FraGuitar extends JFrame {
         //add(NoteA, BorderLayout.EAST);
         setTitle("Rip-Off Guitar Hero");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        int xSize = ((int) tk.getScreenSize().getWidth());
-        int ySize = ((int) tk.getScreenSize().getHeight());
+
         setSize(xSize, ySize);
         this.setResizable(false);
         setLocationRelativeTo(null);

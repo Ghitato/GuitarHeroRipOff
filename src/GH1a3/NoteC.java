@@ -8,13 +8,15 @@ import java.awt.Graphics2D;
 public class NoteC {
 
     Dimension screenSize;
-    int nHeight = 20, nWidth = 100;
+    int nHeight, nWidth;
     int nWidthR = 35, nLengthR = 300;
     int nX, nY;
 
-    NoteC(/*int _nHeight, int _nWidth*/) {
+    NoteC(int x, int y) {
         /*nHeight = _nHeight;
-        nWidth = _nWidth;*/
+         nWidth = _nWidth;*/
+        nHeight = y;
+        nWidth = x;
         nX = (int) (Math.random() * (nWidth - nLengthR));
         nY = (nHeight / 5) * 4;
     }

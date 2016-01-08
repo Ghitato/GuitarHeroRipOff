@@ -76,7 +76,8 @@ public class PanGuitar extends JPanel {
      setBackground(new Color(255, 255, 0));
      }
      }*/
-    public void actionPerformed(ActionEvent e) {
+    //VERY IMPORTANT, COMMENT OUT OTHER PAINT COMPONENTS THEN UNCOMMENT THIS ONE TO WORK IT SOMEWHAT
+    /*public void actionPerformed(ActionEvent e) {
      noteA.update();
      //noteB.update();
      //noteC.update();
@@ -90,19 +91,20 @@ public class PanGuitar extends JPanel {
      noteA.draw((Graphics2D) g);
      //noteB.draw((Graphics2D) g);
      //noteC.draw((Graphics2D) g);
-     //Get a rectangle to display with background color
-     }
+     }*/
 
     class DiffChan1 implements ActionListener {
 
-        public void actionPerformed(ActionEvent event/*, boolean isEasy*/) {
+        public void actionPerformed(ActionEvent event/*, Graphics g*//*, boolean isEasy*/) {
             //isEasy = true;
             setBackground(new Color(125, 100, 26));
             panButton.setVisible(false);
             int Score = 100;
+            int Plus = 10;
+            int Minus = 25;
             JLabel labelScore = new JLabel();
             labelScore.setText("100");
-            labelScore.createImage(nWidth, nHeight);
+            //labelScore.createImage(nWidth, nHeight);
             labelScore.setBounds(650, -50, 100, 500);
             labelScore.setFont(new Font("Arial", 0, 55));
             add(labelScore);
@@ -142,6 +144,12 @@ public class PanGuitar extends JPanel {
             AudioPlayer.player.start(audioStream);
         }
 
+        public void paintComponent(Graphics g) {
+            noteA.update();
+            g.fillRect(0, 0, nWidth, nHeight);
+            g.setColor(Color.BLUE);
+            noteA.draw((Graphics2D) g);
+        }
     }
 
     class DiffChan2 implements ActionListener {
@@ -152,6 +160,8 @@ public class PanGuitar extends JPanel {
             setBackground(Color.GRAY);
             panButton.setVisible(false);
             int Score = 50;
+            int Plus = 5;
+            int Minus = 30;
             JLabel labelScore = new JLabel();
             labelScore.setText("50");
             labelScore.setBounds(650, -50, 1000, 500);
@@ -198,6 +208,13 @@ public class PanGuitar extends JPanel {
             }
             AudioPlayer.player.start(audioStream);
         }
+
+        public void paintComponent(Graphics g) {
+            g.fillRect(0, 0, nWidth, nHeight);
+            g.setColor(Color.BLUE);
+            noteA.draw((Graphics2D) g);
+            noteB.draw((Graphics2D) g);
+        }
     }
 
     class DiffChan3 implements ActionListener {
@@ -222,6 +239,8 @@ public class PanGuitar extends JPanel {
 
             panButton.setVisible(false);
             int Score = 10;
+            int Plus = 1;
+            int Minus = 40;
             JLabel labelScore = new JLabel();
             labelScore.setText("10");
             labelScore.setBounds(650, -50, 1000, 500);
@@ -258,6 +277,12 @@ public class PanGuitar extends JPanel {
             JLabel picliner = new JLabel(liner);
             picliner.setBounds(100, 370, 1500, 600);
             add(picliner);
+            
+            ImageIcon liners = new ImageIcon("liney.png");
+            liners.setImage(liners.getImage().getScaledInstance(2000, 100, 0));
+            JLabel picliners = new JLabel(liners);
+            picliners.setBounds(100, 370, 1500, 600);
+            add(picliners);
 
             String Fuse = "Fusion.wav";
             InputStream in = null;
@@ -273,6 +298,14 @@ public class PanGuitar extends JPanel {
                 Logger.getLogger(PanGuitar.class.getName()).log(Level.SEVERE, null, ex);
             }
             AudioPlayer.player.start(audioStream);
+        }
+
+        public void paintComponent(Graphics g) {
+            g.fillRect(0, 0, nWidth, nHeight);
+            g.setColor(Color.BLUE);
+            noteA.draw((Graphics2D) g);
+            noteB.draw((Graphics2D) g);
+            noteC.draw((Graphics2D) g);
         }
     }
 }
